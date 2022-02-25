@@ -1,0 +1,311 @@
+
+/*---------------------------YOUSSRA FOULANI -------------------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald:wght@400;600&family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Nanum+Myeongjo:wght@700&family=Sawarabi+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Handlee&family=Nanum+Myeongjo:wght@700&family=Sawarabi+Mincho&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Ruthie&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    /*--------------------------*/
+}
+
+h2{
+    display: flex;
+    justify-content:center;
+}
+
+/* Je vais styliser l'image pour pour pouvoir donner un coter ombre + mettre l'effet zoom*/
+
+.bloc-img img{
+    width: 40%;
+    height: 40%;
+}
+.carte1{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-align:center;
+    margin: auto;
+    display:flex;
+    filter: drop-shadow(0 -6mm 4mm rgb(255, 179, 129));
+    /*filter: drop-shadow(0 0 0.85rem rgb(0, 0, 0));*/
+    /*border-radius:50%;*/
+}
+.zoom {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: transform 0.4s ease-in-out;
+    transform: scale(1);
+    will-change: transform;
+}
+
+.zoom::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+   /* background-image: linear-gradient(
+        0deg,
+        rgb(255, 123, 0) 0%,
+        rgba(228, 120, 49, 0.842) 100%
+    );*/
+    mix-blend-mode: multiply;
+    transition: opacity 0.4 ease-in-out;
+}
+
+.carte1:hover .zoom{
+    transform: scale(1.3);
+
+}
+
+.carte1:hover .zoom::before {
+    opacity: 0.3;
+}
+/*-----------FIN----------------------*/
+
+.moment{
+    background-color: rgb(255, 255, 255);
+    width: 15%;
+    height:15%;
+    border:1px solid black;
+    filter: drop-shadow(0 -6mm 4mm rgb(90, 44, 0));
+}
+
+.even{
+    display:flex;
+    justify-content: center;
+    background-color: rgba(134, 248, 27, 0.513);
+    width: 100%;
+    height:100%;
+    border:1px solid black;
+    filter: drop-shadow(0 -6mm 4mm rgb(90, 44, 0));
+}
+
+/*-------------------------------------------------------------------------*/
+.container-3D{
+    margin-top: -15%;
+    margin-left: 200px;
+    width: 250px;
+    height: 400px;
+    border: solid gray 1px;
+    border-radius: 10px;
+    perspective: 500px;
+}
+
+.cardo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 2s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: 0 0 4px rgb(54, 54, 54);
+    border-radius: 10px;
+}
+.front1, .back1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    
+    color: rgb(177, 177, 177);
+    border-radius: 10px;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    background: rgb(0,0,0);
+background: linear-gradient(129deg,
+ rgba(236, 150, 116, 0.965) 10%,
+ rgba(255,235,253,1) 14%,
+ rgba(255,235,253,1) 19%,
+ rgba(236, 150, 116, 0.965)  33%
+ );
+ background-size: 300% 100%;
+ transition: 2s ease-in-out;
+}
+
+.front1{
+    background-position: left;
+}
+
+.back1{
+    background-position: right;
+}
+
+/*
+.front1:hover{
+    transform: rotateY(180deg);
+}
+
+.back1:hover{
+    transform: rotateY(180deg);
+}*/
+.container-3D:hover .cardo{
+    transform: rotateY(180deg);
+}
+
+.container-3D:hover .front1{
+    background-position: right;
+}
+
+.container-3D:hover .back1{
+    background-position: left;
+}
+
+
+
+.front1{
+    text-align: center;
+}
+
+.front1 img{
+    width: 60%;
+    /*border-radius: 50%;*/
+    margin-top: 37%;
+    /*border: thick double #9feca6af;*/
+}
+
+.font1 h6 {
+    font-family: 'Ruthie', cursive;
+    font-weight: normal;
+    font-size: 3rem;
+    text-shadow: 2px 4px 2px #818181;
+}
+
+.back1{
+    
+    transform: rotateY(180deg);
+}
+
+.back1-c{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    /*text-shadow: 1px 3px 2px black;*/
+}
+.front1-c, .back1-c{
+    transform: translateZ(70px);
+}
+
+
+.fab{
+    color: #ff9ad5;
+    font-size: 2.5rem;
+    transition: all 0.5s;
+}
+
+.fa:hover{
+    transform: scale(1.2);
+}
+
+.fa-snapchat-square:hover{
+    color: yellow;
+}
+.fa-linkedin:hover{
+    color: #004182;
+}
+
+.fa-discord:hover{
+    color: #6f85d5;
+}
+
+hr{
+    border: 0;
+    height: 2px;
+    width: 90%;
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgb(253, 114, 0),
+        rgba(0, 0, 0, 0)
+    );
+}
+
+.fa-store{
+    margin-left: 50%;
+}
+
+a:-webkit-any-link {
+    color: #000;
+    font-family: 'Ruthie', cursive;
+    font-size: 70px;
+    font-family: 'Abril Fatface', cursive;
+}
+/*----------------------------------------*/
+
+#cercle {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: rgba(89, 180, 3, 0.513);
+}
+
+#endirect {
+    color: #000;
+}
+
+/*-------------------------------------------*/
+.container-3D1{
+    margin-top: -21%;
+    margin-left: 1500px;
+    width: 250px;
+    height: 400px;
+    border: solid gray 1px;
+    border-radius: 10px;
+    perspective: 500px;
+}
+
+.container-3D1:hover .cardo{
+    transform: rotateY(180deg);
+}
+
+.container-3D1:hover .front1{
+    background-position: right;
+}
+
+.container-3D1:hover .back1{
+    background-position: left;
+}
+/*-------------------------------------------*/
+
+#cercle1 {
+    margin: 100px;
+    margin-top: 150px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    background: rgba(89, 180, 3, 0.513);
+}
+
+.horaire{
+    margin-top: -70px;
+}
+
+.ecriture {
+    font-size: 10px;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+}
